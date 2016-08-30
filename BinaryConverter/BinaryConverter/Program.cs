@@ -16,9 +16,9 @@ namespace BinaryConverter
             BitArray bitArr;
             do
             {
-                Console.Write("Enter number or type 'exit' to quit: ");
+                Console.Write("Enter number or type 'quit' to exit: ");
                 exit = Console.ReadLine();
-                if (exit.Trim().ToLower() != "exit")
+                if (exit.Trim().ToLower() != "exit" && exit.Trim().ToLower() != "quit")
                 {
                     if (int.TryParse(exit, out n))
                     {
