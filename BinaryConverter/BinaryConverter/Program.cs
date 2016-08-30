@@ -21,7 +21,7 @@ namespace BinaryConverter
                 if (exit.Trim().ToLower() != "exit" && exit.Trim().ToLower() != "quit")
                 {
                     if (int.TryParse(exit, out n))
-                    {
+                    { 
                         try
                         {
                             bitArr = new BitArray(n);

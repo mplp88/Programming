@@ -32,29 +32,26 @@ namespace BinaryConverter
 
         private void CreateBitArray(int n)
         {
-            int pow = 2;
+            int pow = 1;
+            int cont = 0;
+            int x = 0;
 
-            while (n < Math.Pow(4,pow))
+            if (n < 4)
             {
-                n = 4 * (pow / 2);
-                pow += 2;
+                x = 4;
+            }
+            else
+            {
+                while (n >= Math.Pow(4, pow))
+                {
+                    pow += pow;
+                    cont++;
+                    x = 4 * cont;
+                }
             }
 
-            bitArr = new int[n];
+            bitArr = new int[x];
         }
-
-        /*
-         * if ( n < 4 ^ 2 )
-         *  return 4 * cont; 
-         * if ( n < 4 ^ 2+2)
-         *  return 4 * cont+1;
-         * if ( n < 4 ^ 2+2+2)
-         *  return 4 * cont+2;
-         * if ( n < 4 ^ 2+2+2+2) 
-         *  return 4 * cont+3;
-         * if ( n < 4 ^ x)
-         *  return 4 * cont; 
-         */
 
         private void FillBitArray(int n)
         {
